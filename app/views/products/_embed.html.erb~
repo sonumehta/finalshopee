@@ -1,0 +1,2 @@
+<%= product.pname %>
+<%= product.price %>

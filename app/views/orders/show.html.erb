@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Custid:</strong>
+  <%= @order.custID %>
+</p>
+
+<p>
+  <strong>Ordernumber:</strong>
+  <%= @order.orderNumber %>
+</p>
+
+<p>
+  <strong>Payid:</strong>
+  <%= @order.payID %>
+</p>
+
+<p>
+  <strong>Orderdate:</strong>
+  <%= @order.orderdate %>
+</p>
+
+<p>
+  <strong>Shipdate:</strong>
+  <%= @order.shipdate %>
+</p>
+
+<p>
+  <strong>Reqdate:</strong>
+  <%= @order.reqdate %>
+</p>
+
+<p>
+  <strong>Shipperid:</strong>
+  <%= @order.shipperID %>
+</p>
+
+<p>
+  <strong>Salestax:</strong>
+  <%= @order.salesTax %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Error:</strong>
+  <%= @order.error %>
+</p>
+
+<p>
+  <strong>Fulfilled:</strong>
+  <%= @order.fulfilled %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @order.deleted %>
+</p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @order.paid %>
+</p>
+
+<p>
+  <strong>Paydate:</strong>
+  <%= @order.paydate %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

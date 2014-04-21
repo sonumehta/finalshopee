@@ -1,0 +1,26 @@
+<% provide(:title, "Add New Shipper") %>
+<h1>Add New Shipper</h1>
+<div class="row">
+  <div class="span6 offset3">
+
+
+    
+
+
+      <%= form.label :company_name %>
+      <%= form.text_field :company_name %>
+
+     
+      <%= form.label :Phone %>
+      <%= form.phone_field  :phone %>
+
+
+<%= form.submit "Add Supplier", class: "btn btn-large btn-primary" %>
+<% end %>
+
+<%= link_to 'Show', @shipper %> |
+<%= link_to 'Back', shippers_path %>
+</div>
+</div>
+
+

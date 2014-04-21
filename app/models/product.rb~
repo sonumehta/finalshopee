@@ -1,0 +1,74 @@
+class Product < ActiveRecord::Base
+has_many :comments
+default_scope :order => 'pname'
+has_many :line_items
+has_many :comments,:dependent => :destroy
+
+
+before_destroy :ensure_not_referenced_by_any_line_item
+# ensure that there are no line items referencing this product
+def ensure_not_referenced_by_any_line_item
+	if line_items.count.zero?
+	return true
+	else
+	errors[:base] << "Line Items present"
+	return false
+	end
+end
+
+
+
+has_attached_file :pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.jpg"
+validates_attachment_content_type :pic, :content_type => /\Aimage\/.*\Z/
+searchkick
+
+
+
+
+
+validates :pname, :presence => true,length: { maximum: 50 }
+validates :IDSKU, :presence => true,:uniqueness => true
+validates :supplier_id, :presence => true
+validates :cat1, :presence => true
+validates :cat2, :presence => true
+validates :cat3, :presence => true
+
+validates :price,  :presence => true,:numericality => {:greater_than_or_equal_to => 0.01}
+
+validates :color, :presence => true
+
+validates :discount, :numericality => {:greater_than_or_equal_to => 0.01}
+
+
+def add_comment(user_id,product_id,content)
+	
+	current_comment = Comment.new(:product_id=>product_id,:user_id=>user_id,:content=>content)
+		
+	
+	current_comment
+end
+
+	
+
+def self.search(search,search2=nil)
+  
+
+  
+  if search
+  search_condition = '%' + search +'%'
+  
+  @search_res=find(:all, :conditions => ['cat1 LIKE ?  OR cat2 LIKE ? OR cat3 LIKE ? OR pname LIKE ?  ',search,search, search,search_condition])
+  
+  
+
+  else
+    find(:all)
+  end
+
+
+end
+end
+
+
+
+end

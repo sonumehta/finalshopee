@@ -1,0 +1,49 @@
+<h1>Listing order_details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Orderid</th>
+      <th>Productid</th>
+      <th>Ordernumber</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Discount</th>
+      <th>Total</th>
+      <th>Idsku</th>
+      <th>Size</th>
+      <th>Color</th>
+      <th>Shipdate</th>
+      <th>Billdate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_details.each do |order_detail| %>
+      <tr>
+        <td><%= order_detail.orderID %></td>
+        <td><%= order_detail.productID %></td>
+        <td><%= order_detail.orderNumber %></td>
+        <td><%= order_detail.price %></td>
+        <td><%= order_detail.quantity %></td>
+        <td><%= order_detail.discount %></td>
+        <td><%= order_detail.total %></td>
+        <td><%= order_detail.IDSKU %></td>
+        <td><%= order_detail.size %></td>
+        <td><%= order_detail.color %></td>
+        <td><%= order_detail.shipdate %></td>
+        <td><%= order_detail.billdate %></td>
+        <td><%= link_to 'Show', order_detail %></td>
+        <td><%= link_to 'Edit', edit_order_detail_path(order_detail) %></td>
+        <td><%= link_to 'Destroy', order_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order detail', new_order_detail_path %>

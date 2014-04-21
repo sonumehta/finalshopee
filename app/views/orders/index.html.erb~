@@ -1,0 +1,53 @@
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Custid</th>
+      <th>Ordernumber</th>
+      <th>Payid</th>
+      <th>Orderdate</th>
+      <th>Shipdate</th>
+      <th>Reqdate</th>
+      <th>Shipperid</th>
+      <th>Salestax</th>
+      <th>Status</th>
+      <th>Error</th>
+      <th>Fulfilled</th>
+      <th>Deleted</th>
+      <th>Paid</th>
+      <th>Paydate</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.custID %></td>
+        <td><%= order.orderNumber %></td>
+        <td><%= order.payID %></td>
+        <td><%= order.orderdate %></td>
+        <td><%= order.shipdate %></td>
+        <td><%= order.reqdate %></td>
+        <td><%= order.shipperID %></td>
+        <td><%= order.salesTax %></td>
+        <td><%= order.status %></td>
+        <td><%= order.error %></td>
+        <td><%= order.fulfilled %></td>
+        <td><%= order.deleted %></td>
+        <td><%= order.paid %></td>
+        <td><%= order.paydate %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if admin_user? %>
+<%= link_to 'New Order', new_order_path %><% end %> 

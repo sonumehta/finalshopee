@@ -1,0 +1,19 @@
+ <%  @orders.each do |order|  %>
+
+
+<%= link_to "Order No "+order.id.to_s,"/customerorders/"+order.id.to_s+"/edit" %>
+<li>
+
+ <strong>Paytype:<%= order.pay_type %> </strong>
+</li>
+<br>Products :<br>
+<% (order.line_items).each do |item| %>
+
+	   <strong><%= Product.find_by_id(item.product_id).pname %> </strong>
+	  Quantity- <%= item.quantity %> 
+	<br>
+	
+	
+	<% end %>
+<hr>
+<% end %>

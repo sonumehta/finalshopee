@@ -1,0 +1,20 @@
+<% provide(:title, 'All users') %>
+<h1>All Orders</h1>
+<div class="row">
+  <div class="span6 offset3">
+
+<%= form_tag "/customerorders/", :method => 'get', :class => "form-inline" do %>
+  
+    <%= text_field_tag :search, params[:search] %> <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+  
+<% end %>
+</div></div>
+OrderNo. &nbsp|&nbsp
+Customer Name &nbsp|&nbsp
+Shipping Address &nbsp|&nbsp
+Cart Link &nbsp|&nbsp
+
+<ul class="users">
+  <%= render @customerorders %>
+</ul>
+

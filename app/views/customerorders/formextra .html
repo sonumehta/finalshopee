@@ -1,0 +1,84 @@
+
+
+
+
+<h1>Listing customerorders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Pay type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+	
+    #<% @customerorders.each do |customerorder| %>
+      <tr>
+        <td><%= customerorder.name %></td>
+        <td><%= customerorder.address %></td>
+        <td><%= customerorder.email %></td>
+        <td><%= customerorder.pay_type %></td>
+        <td><%= link_to 'Show', customerorder %></td>
+        <td><%= link_to 'Edit', edit_customerorder_path(customerorder) %></td>
+        <td><%= link_to 'Destroy', customerorder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+
+<h1>Editing customerorder status</h1>
+
+
+<%= form_for @customerorder do |f| %>
+	<% if @customerorder.errors.any? %>
+	<div id="error_explanation">
+	<h2><%= pluralize(@customerorder.errors.count, "error" ) %>
+	prohibited this order from being saved:</h2>
+    <ul>
+	<% @customerorder.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+    </ul>
+</div>
+
+<% end %>
+
+<div>
+	Name: 	<%= @customerorder.name %>
+</div>
+<div>
+	Address: <%= @customerorder.address %>
+</div>
+<div>
+	Email: 	<%= @customerorder.email %></div>
+
+<%= f.hidden_field :user_id, :value => current_user.id%>
+<%= f.hidden_field :cart_id, :value => current_cart.id%>
+<div>
+	Payment type: 	<%= @customerorder.pay_type %>
+<div>
+	<%= f.label :Status, "Status" %>
+	<%=f.select :status,Customerorder::STATUS_TYPES,:prompt => "Change Status"%>
+</div>
+
+<%= f.submit "Change Status" %>
+<% end %>
+
+
+
+<%= link_to 'Show', @customerorder %> |
+<%= link_to 'Back', customerorders_path %>
+

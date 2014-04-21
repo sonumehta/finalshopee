@@ -1,0 +1,324 @@
+@import "bootstrap";
+
+/* universal */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+
+$grayMediumLight: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+
+#products .entry form, #products .entry form div {
+display: inline;
+}
+
+#products .cart_title {
+font: 120% bold;
+}
+#products .item_price, #products .total_line {
+text-align: right;
+}
+#products .total_line .total_cell {
+font-weight: bold;
+border-top: 1px solid #595;
+}
+
+
+#cart, #cart table {
+font-size: smaller;
+color:
+white;
+}
+#cart table {
+border-top:
+1px dotted #595;
+border-bottom: 1px dotted #595;
+margin-bottom: 10px;
+}
+
+.depot_form fieldset {
+background: #efe;
+}
+
+.depot_form legend {
+color: #dfd;
+background: #141;
+font-family: sans-serif;
+padding: 0.2em 1em;
+}
+.depot_form label {
+width: 5em;
+float: left;
+text-align: right;
+padding-top: 0.2em;
+margin-right: 0.1em;
+display: block;
+}
+.depot_form select, .depot_form textarea, .depot_form input {
+margin-left: 0.5em;
+}
+.depot_form .submit {
+margin-left: 4em;
+}
+.depot_form div {
+margin: 0.5em 0;
+}
+
+.verticalLine {
+    border-left: thick solid #ff0000;
+}
+
+
+.gridview {
+ 
+ display: grid;
+   
+ /* Then, we define the number of columns we want by setting their dimensions */
+ /* Beware, gaps between columns will be actual columns too */
+ /* 1. This means there are 3 columns: 
+  * the first one is 200px wide
+  * the second one will be a margin (1%) 
+  * the third one will occupy the remaining space 
+  */
+ grid-columns: 200px 1% 1fr; /* 1 */
+   
+ /* Now we define the number of rows and their dimensions */
+ /* 2. this means there are 5 rows: 
+  * the first one will be sized according to its content
+  * the second one will be a margin
+  * the third one will be sized according to its content
+  * the fourth one will be a margin as well
+  * the last one will be sized according to its content 
+  */
+ grid-rows: auto 15px auto 15px auto; /* 2 */
+   
+ /* The body element is now a 3*5 grid. */
+}
+
+.mainview{
+
+margin-left: 30em;
+padding-top: 4ex;
+padding-left: 30em;
+background: white;
+}
+
+
+ul.products li {
+    overflow: auto;
+    padding: 10px 12;
+    border-top: 1px solid ;
+    &:last-child {
+      border-bottom: 1px solid ; }
+    width: 200px;
+    display: inline-block;
+}
+
+
+.siderel {
+float: left;
+padding-top: 1em;
+padding-left: 1em;
+padding-bottom: 1em;
+width: 12em;
+background: #456;
+}
+
+

@@ -1,0 +1,10 @@
+<li>
+   
+
+  <%= link_to product.pname, product %> &nbsp&nbsp&nbsp
+  <%= image_tag product.pic.url(:thumb) %><div align="centre">
+   <%= link_to 'Edit', edit_product_path(product) %> |
+	
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>  </div>
+</li>
+`

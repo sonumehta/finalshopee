@@ -1,0 +1,11 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :viewed_item do
+    user_id "MyString"
+     "MyString"
+    integer, "MyString"
+    product_id "MyString"
+    integer "MyString"
+  end
+end

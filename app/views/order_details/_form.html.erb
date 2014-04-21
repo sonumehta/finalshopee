@@ -1,0 +1,65 @@
+<%= form_for(@order_detail) do |f| %>
+  <% if @order_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order_detail.errors.count, "error") %> prohibited this order_detail from being saved:</h2>
+
+      <ul>
+      <% @order_detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orderID %><br>
+    <%= f.number_field :orderID %>
+  </div>
+  <div class="field">
+    <%= f.label :productID %><br>
+    <%= f.number_field :productID %>
+  </div>
+  <div class="field">
+    <%= f.label :orderNumber %><br>
+    <%= f.number_field :orderNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :discount %><br>
+    <%= f.text_field :discount %>
+  </div>
+  <div class="field">
+    <%= f.label :total %><br>
+    <%= f.text_field :total %>
+  </div>
+  <div class="field">
+    <%= f.label :IDSKU %><br>
+    <%= f.number_field :IDSKU %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.text_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+  <div class="field">
+    <%= f.label :shipdate %><br>
+    <%= f.datetime_select :shipdate %>
+  </div>
+  <div class="field">
+    <%= f.label :billdate %><br>
+    <%= f.datetime_select :billdate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

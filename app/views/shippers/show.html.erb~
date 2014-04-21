@@ -1,0 +1,16 @@
+<% provide(:title, @shipper.company_name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+	Id:
+	<%= @shipper.id %><br><br>
+        Name:&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <%= @shipper.company_name %><br><br>
+	Contact No:&nbsp
+	<%= @shipper.phone %>
+      </h1>
+    </section>
+  </aside>
+</div>
+

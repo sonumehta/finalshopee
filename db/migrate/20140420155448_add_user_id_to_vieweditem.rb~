@@ -1,0 +1,6 @@
+class AddUserIdToVieweditem < ActiveRecord::Migration
+  def change
+	add_column :vieweditems, :user, :integer
+		add_column :vieweditems, :product, :integer
+  end
+end

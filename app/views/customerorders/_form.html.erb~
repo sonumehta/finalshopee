@@ -1,0 +1,41 @@
+
+<%= form_for @customerorder do |f| %>
+	<% if @customerorder.errors.any? %>
+	<div id="error_explanation">
+	<h2><%= pluralize(@customerorder.errors.count, "error" ) %>
+	prohibited this order from being saved:</h2>
+    <ul>
+	<% @customerorder.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+    </ul>
+</div>
+
+<% end %>
+
+<div>
+	<%= f.label :name, "Name:" %>
+	<%= f.text_field :name, :size => 40 %>
+</div>
+<div>
+	<%= f.label :address, "Address:" %>
+	<%= f.text_area :address, :rows => 3, :cols => 40 %>
+</div>
+<div>
+	<%= f.label :email, "E-Mail:" %>
+	<%= f.email_field :email, :size => 40 %>
+</div>
+<%= f.hidden_field :user_id, :value => current_user.id%>
+<%= f.hidden_field :cart_id, :value => current_cart.id%>
+<div>
+	<%= f.label :pay_type, "Pay with:" %>
+	<%=f.select :pay_type,Customerorder::PAYMENT_TYPES,:prompt => "Select a payment method"%>
+</div>
+<div>
+	<%= f.label :Status, "Status" %>
+	<%=f.select :status,Customerorder::STATUS_TYPES,:prompt => "Change Status"%>
+</div>
+
+<%= f.submit "Place Order" %>
+<% end %>
+

@@ -1,0 +1,15 @@
+ <%  @orders.each do |order|  %>
+Order No.
+
+<%= order.cart_id %>
+<br>Products :<br>
+<% (order.line_items).each do |item| %>
+
+	   <strong><%=Product.find_by_id(item.product_id).pname  %> </strong>
+	  Quantity- <%= item.quantity %> 
+	<hr>
+	
+	
+	
+	<% end %>
+<% end %>

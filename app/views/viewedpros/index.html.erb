@@ -1,0 +1,29 @@
+<h1>Listing viewedpros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Product</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @viewedpros.each do |viewedpro| %>
+      <tr>
+        <td><%= viewedpro.user_id %></td>
+        <td><%= viewedpro.product_id %></td>
+        <td><%= link_to 'Show', viewedpro %></td>
+        <td><%= link_to 'Edit', edit_viewedpro_path(viewedpro) %></td>
+        <td><%= link_to 'Destroy', viewedpro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Viewedpro', new_viewedpro_path %>

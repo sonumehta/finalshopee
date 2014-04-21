@@ -1,0 +1,3 @@
+<%= @product.pname >
+(function() { document.write(&quot;&lt;div class=\&quot;widget-ilove\&quot;&gt;\n    &lt;a href=\&quot;http://taskarmy.com\&quot; alt=\&quot;TaskArmy.com\&quot; title=\&quot;Awesome freelance marketplace :)\&quot;&gt;\n        &lt;div class=\&quot;line1\&quot;&gt;I &lt;span class=\&quot;heart\&quot;&gt;&amp;hearts;&lt;/span&gt;&lt;/div&gt;\n        &lt;div class=\&quot;line2\&quot;&gt;TaskArmy&lt;/div&gt;\n    &lt;/a&gt;\n&lt;/div&gt;\n&quot;) })()
+<= @product.pname %>(function() { document.write(<%= @content.to_json %>) })()

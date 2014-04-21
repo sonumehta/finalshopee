@@ -1,0 +1,8 @@
+(function(){
+document.write('<div class="customCSSclass" id="appName-widget">');
+ 
+<% @products.each do |product| -%>
+    document.write('<a href="<%= product.pname %>"><%=h product.price %></a><br />')
+<% end -%>
+ 
+document.write('</div>') })()

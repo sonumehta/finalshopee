@@ -1,0 +1,10 @@
+<%= form_for(@comment) do |f| %>
+
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
+<%= f.text_field :product_id, :value =>"1"  %>
+  <button class="btn" type="submit">
+    Create
+  </button>
+<% end %>

@@ -1,0 +1,49 @@
+<% provide(:title, '') %>
+<script>
+$(function(){
+  $('#myCarousel').carousel();
+});
+</script>
+<div class="center hero-unit">
+  <h1>Welcome to ShopMore</h1>
+
+<!-- carousel -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= link_to image_tag("3.jpg", alt: "Rails")%>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>SALE-UPTO 50% OFF</h1>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("1.jpg", alt: "Rails")%>
+    </div>
+    <div class="item">
+      <%= link_to image_tag("2.jpg", alt: "Rails")%>
+    </div>
+  </div>
+<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    &lsaquo;
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    &rsaquo;
+  </a>
+</div><!-- /.carousel -->  
+</div>
+
+
+<%= link_to image_tag("http://www.invodo.com/wp-content/uploads/2013/07/Holiday-Shopping-online.jpg", alt: "ShopMore"), 'http://shopmorehere.herokuapp.com/',class: "center   btn-primary" %>
+
+
+
+    
+
+

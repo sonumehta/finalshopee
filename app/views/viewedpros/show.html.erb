@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @viewedpro.user_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @viewedpro.product_id %>
+</p>
+
+<%= link_to 'Edit', edit_viewedpro_path(@viewedpro) %> |
+<%= link_to 'Back', viewedpros_path %>

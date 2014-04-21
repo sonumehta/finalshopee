@@ -1,0 +1,8 @@
+$.fn.subSelectWithAjax = function() {
+  var that = this;
+
+  this.change(function() {
+    $.post(that.attr('rel'), {id: that.val()}, null, "script");
+  });
+}
+

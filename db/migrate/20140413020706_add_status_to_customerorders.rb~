@@ -1,0 +1,5 @@
+class AddStatusToCustomerorders < ActiveRecord::Migration
+  def change
+	add_column :customerorders, :status, :string
+  end
+end

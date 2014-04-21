@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @customerorder.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @customerorder.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customerorder.email %>
+</p>
+
+<p>
+  <strong>Pay type:</strong>
+  <%= @customerorder.pay_type %>
+</p>
+
+<%= link_to 'Edit', edit_customerorder_path(@customerorder) %> |
+<%= link_to 'Back', customerorders_path %>

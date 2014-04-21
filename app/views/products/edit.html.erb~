@@ -1,0 +1,56 @@
+<h1>Editing product</h1>
+
+
+<%= form_for @product, :url => products_path, :html => { :multipart => true } do |form| %>
+      <%= form.label :product_name %>
+      <%= form.text_field :pname %>
+
+      <%= form.label :IDSKU, "Idsku" %>
+      <%= form.number_field :IDSKU %>
+
+      <%= form.label :Supplier_id %>
+      <%= form.number_field  :supplier_id %>
+
+       <%= form.label :Category1 %>
+       <%= form.select :cat1, options_for_select(Cat1.order(:id).pluck(:name)) %>
+
+      <%= form.label :Category2 %>
+      <%= form.select :cat2, options_for_select(Cat2.order(:cat1_id, :name).pluck(:name))  %>
+
+      <%= form.label :Category3 %>
+      <%= form.select :cat3, options_for_select(Cat3.order(:cat2_id, :name).pluck(:name))  %>
+		
+	  <%= form.label :Picture %>
+	  <%= form.file_field :pic %>
+<%= image_tag @product.pic.url(:thumb) %>
+
+
+      <%= form.label :Description %>
+      <%= form.text_field :desc %>
+
+      <%= form.label :Price %>
+      <%= form.number_field  :price %>
+     
+      <%= form.label :Color %>
+      <%= form.color_field :color %>
+
+      <%= form.label :Weight %>
+      <%= form.number_field :weight %>
+      
+      <%= form.label :Discount %>
+      <%= form.number_field :discount %>
+      <%= form.label :Is_product_available %>
+      <%= form.check_box :product_available %>
+      <%= form.label :Is_discount_available %>
+      <%= form.check_box :discount_available %>
+
+
+
+
+<%= form.submit "Save Changes", class: "btn btn-large btn-primary" %>
+<% end %>
+
+
+
+<%= link_to 'Show', @product %> |
+<%= link_to 'Back', products_path %>

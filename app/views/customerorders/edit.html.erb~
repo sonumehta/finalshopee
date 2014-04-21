@@ -1,0 +1,45 @@
+
+<% if admin_user? %>
+<h1>Editing customerorder status</h1>
+
+
+<%= form_for @customerorder do |f| %>
+	<% if @customerorder.errors.any? %>
+	<div id="error_explanation">
+	<h2><%= pluralize(@customerorder.errors.count, "error" ) %>
+	prohibited this order from being saved:</h2>
+    <ul>
+	<% @customerorder.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+    </ul>
+</div>
+
+<% end %>
+
+<div>
+	Name: 	<%= @customerorder.name %>
+</div>
+<div>
+	Address: <%= @customerorder.address %>
+</div>
+<div>
+	Email: 	<%= @customerorder.email %></div>
+
+<%= f.hidden_field :user_id, :value => current_user.id%>
+<%= f.hidden_field :cart_id, :value => current_cart.id%>
+<div>
+	Payment type: 	<%= @customerorder.pay_type %>
+<div>
+	<%= f.label :Status, "Status" %>
+	<%=f.select :status,Customerorder::STATUS_TYPES,:prompt => "Change Status"%>
+</div>
+
+<%= f.submit "Change Status" %>
+<% end %>
+
+
+
+<%= link_to 'Show', @customerorder %> |
+<%= link_to 'Back', customerorders_path %>
+<% end %>

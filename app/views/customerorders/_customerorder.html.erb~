@@ -1,0 +1,13 @@
+<li>
+  <%= link_to customerorder.id, customerorder %> &nbsp
+  <%= link_to customerorder.name, User.find_by_id(customerorder.user_id)%> &nbsp
+  <%= customerorder.address %> &nbsp
+  <%= link_to customerorder.cart_id, Cart.find_by_id(customerorder.cart_id) %>
+
+
+  <% if current_user.admin?%>
+    | <%= link_to "delete", customerorder, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+			
+  <% end %>
+</li>

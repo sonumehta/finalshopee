@@ -1,0 +1,72 @@
+<% provide(:title, 'Add New Product') %>
+<h1>Add New Product</h1>
+<div class="row">
+  <div class="span6 offset3">
+
+<%= form_for(@product) do |f| %>
+	 
+
+      <%= f.label :product_name %>
+      <%= f.text_field :pname %>
+
+      <%= f.label :IDSKU, "Idsku" %>
+      <%= f.number_field :IDSKU %>
+
+      <%= f.label :Supplier_id %>
+      <%= f.number_field  :supplier_id %>
+      
+
+
+       <%= f.label :Category1 %>
+<%= f.select :cat1, options_for_select(Cat1.order(:id).pluck(:name)) %>
+	<%= f.label :Category2 %>
+     
+      <%= f.select :cat2, options_for_select(Cat2.order(:cat1_id, :name).pluck(:name))  %>
+
+      <%= f.label :Category3 %>
+      <%= f.select :cat3, options_for_select(Cat3.order(:cat2_id, :name).pluck(:name))  %>
+      
+
+<%= f.label :picture %>
+
+  <%= f.file_field :pic %>
+
+
+
+      
+
+      <%= f.label :Description %>
+      <%= f.text_field :desc %>
+
+      <%= f.label :Price %>
+      <%= f.number_field  :price %>
+     
+      <%= f.label :Color %>
+      <%= f.color_field :color %>
+
+      <%= f.label :Weight %>
+      <%= f.number_field :weight %>
+      
+      <%= f.label :Discount %>
+      <%= f.number_field :discount %>
+      <%= f.label :Is_product_available %>
+      <%= f.check_box :product_available %>
+      <%= f.label :Is_discount_available %>
+      <%= f.check_box :discount_available %>
+
+      <%= f.label :Picture %>
+      <%= f.text_field :picture %>
+
+
+
+
+	
+
+      <%= f.submit "Add Product", class: "btn btn-large btn-primary" %>
+<% end %>
+<%= link_to 'Back', products_path %>
+
+</div>
+</div>
+
+

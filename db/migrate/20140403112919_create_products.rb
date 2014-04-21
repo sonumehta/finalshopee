@@ -1,0 +1,23 @@
+class CreateProducts < ActiveRecord::Migration
+  def change
+    create_table :products do |t|
+      t.string :pname
+      t.integer :IDSKU
+      t.integer :supplier_id
+      t.string :cat1
+      t.string :cat2
+      t.string :cat3
+      t.string :desc
+      t.float :price
+      t.string :color
+      t.float :weight
+      t.float :discount
+      t.boolean :product_available
+      t.boolean :discount_available
+      t.string :picture
+      t.integer :ranking
+
+      t.timestamps
+    end
+  end
+end
